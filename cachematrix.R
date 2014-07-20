@@ -3,11 +3,11 @@
 
 ## makeCacheMatrix 
 ##
-## create a matrix whose inverse can be cached when calculated with cacheSolve
+## Create a matrix whose inverse can be cached when calculated with cacheSolve
 ## i stores the inverse when if the calculation is performed
 ## defines 4 methods: set, get, setSolve, getSolve 
 ##
-## parameters:
+## Parameters:
 ## x: matrix to be created
 ##
 makeCacheMatrix <- function(x = matrix()) {
@@ -27,14 +27,15 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## cacheSolve
 ##
-## caclulate an inverse matrix. 
-## cache the result, i.e. don't recaclulate the inverse if it has already been caclulated
+## Calculate an inverse matrix using R "solve" and cache the result, 
+## i.e. don't recaclulate the inverse if it has already been caclulated
+## The matrix must have been created by "makeCacheMatrix"
 ## use methods provided by makeCacheMatrix (get, getSolve, setSolve)
 ##
-## parameters:
+## Parameters:
 ## x: the matrix fro which the inverse has to be calculated
-## ... other parameters passed to the inverse function
-## returns the inverse matrix of x 
+## ... other parameters passed to the solve function
+## Returns the inverse matrix of x 
 ##  
 cacheSolve <- function(x, ...) {
   m <- x$getSolve()
